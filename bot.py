@@ -32,7 +32,7 @@ class Bot():
         self.author_points = yaml.load(sub.wiki['flairbot'].content_md)
         
         """ SET TO Total number of posts for a full refresh.  Be sure to wipe out all flair and wiki page content first """
-        self.MAX_POSTS_CHECKED = 150
+        self.MAX_POSTS_CHECKED = 20
         
         #track total posts (max = 100 using streams.)
         self.TOTAL_CREATION_GIF_POSTS = 0
@@ -219,6 +219,6 @@ if __name__=="__main__":
         bot=Bot()
         bot.run()
         print("Cycle complete, sleeping for 60 seconds")
-        time.sleep(60)
+        time.sleep(600)
         #sleeping for 10 seconds
 	    
