@@ -32,7 +32,7 @@ class Bot():
         self.author_points = yaml.load(sub.wiki['flairbot'].content_md)
         
         """ SET TO Total number of posts for a full refresh.  Be sure to wipe out all flair and wiki page content first """
-        self.MAX_POSTS_CHECKED = 20
+        self.MAX_POSTS_CHECKED = 120
         
         #track total posts (max = 100 using streams.)
         self.TOTAL_CREATION_GIF_POSTS = 0
@@ -149,8 +149,9 @@ class Bot():
             # Check to see if further processing is required            
             additional_processing_required = False
 
+            
             #ignore posts with less than 10 Karma
-            if submission.score < 10 :
+            if submission.score < 14 :
                 continue
 
             #add user to authorpoints
@@ -219,6 +220,6 @@ if __name__=="__main__":
         bot=Bot()
         bot.run()
         print("Cycle complete, sleeping for 60 seconds")
-        time.sleep(600)
+        time.sleep(3000)
         #sleeping for 10 seconds
 	    
